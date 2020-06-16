@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\netcoreapp3.1\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/54bbc4fc-5219-4583-9ee1-ed560a2ec61b/resourceGroups/Cursos/providers/Microsoft.Web/sites/SAEPlatzi"
+}
