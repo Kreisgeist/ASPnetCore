@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Curso>
+
+@{
+    ViewData["Title"] = "Información Curso";
+}
+
+<h1>@ViewData["Title"]</h1>
+@if(ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+    </div>  
+}
+
+<a href="/Curso/Create" class="btn btn-primary btn-lg">Agregar Curso &raquo;</a>
+<a href="/Curso/Edit" class="btn btn-primary btn-lg">Modificar Curso &raquo;</a>
+<a href="/Escuela/Index" class="btn btn-primary btn-lg">Volver &raquo;</a>
+<br /><br />
+<partial name="ListaObjetosEscuela" />
+            <th scope="col">Escuela Id</th>
+            <th scope="col">Jornada</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var objeto in Model)
+        {
+            <tr>
+                <td>@objeto.Nombre</td>
+                <td>@objeto.Id</td>
+                <td>@objeto.EscuelaId</td>
+                <td>@objeto.Jornada</td>
+            </tr> 
+        }
+    </tbody>
+</table>
+
+<p><i>@ViewBag.Fecha</i></p>

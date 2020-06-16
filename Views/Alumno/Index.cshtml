@@ -1,0 +1,42 @@
+@model IEnumerable<ASP_.NET_Core.Models.Alumno>
+
+@{
+    ViewData["Title"] = "Información de Alumnos";
+}
+
+<h1>Información de Alumnos</h1>
+
+<p>
+    <a asp-action="Create">Crear nuevo Alumno</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Curso)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curso.Nombre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<input onclick="document.location.href='Escuela'" type="button" value="Regresar >>" class="btn btn-primary btn-lg" />

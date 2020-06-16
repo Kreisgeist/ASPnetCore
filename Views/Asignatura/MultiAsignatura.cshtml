@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Asignatura>
+
+@{
+    ViewData["Title"] = "Información Asignatura";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a href="/Asignatura/Create" class="btn btn-primary btn-lg">Agregar Asignatura &raquo;</a>
+<a href="/Asignatura/Edit" class="btn btn-primary btn-lg">Modificar Asignatura &raquo;</a>
+<a href="/Escuela/Index" class="btn btn-primary btn-lg">Volver &raquo;</a>
+<br /><br />
+<partial name="ListaObjetosEscuela" />
+            <th scope="col">Curso Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var objeto in Model)
+        {
+            <tr>
+                <td>@objeto.Nombre</td>
+                <td>@objeto.Id</td>
+                <td>@objeto.CursoId</td>
+            </tr> 
+        }
+    </tbody>
+</table>
+
+<p><i>@ViewBag.Fecha</i></p>

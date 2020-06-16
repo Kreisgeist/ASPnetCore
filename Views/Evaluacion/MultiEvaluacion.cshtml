@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Evaluación>
+
+@{
+    ViewData["Title"] = "Información Evaluaciones";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a href="/Evaluacion/Create" class="btn btn-primary btn-lg">Agregar Evaluacion &raquo;</a>
+<a href="/Evaluacion/Edit" class="btn btn-primary btn-lg">Modificar Evaluacion &raquo;</a>
+<a href="/Escuela/Index" class="btn btn-primary btn-lg">Volver &raquo;</a>
+<br /><br />
+<partial name="ListaObjetosEscuela" />
+            <th scope="col">Nota</th>
+            <th scope="col">Alumno Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var objeto in Model)
+        {
+            <tr>
+                <td>@objeto.Nombre</td>
+                <td>@objeto.Id</td>
+                <td>@objeto.Nota</td>
+                <td>@objeto.AlumnoId</td>
+            </tr> 
+        }
+    </tbody>
+</table>
+
+<p><i>@ViewBag.Fecha</i></p>

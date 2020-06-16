@@ -1,0 +1,56 @@
+@model ASP_.NET_Core.Models.Escuela
+
+@{
+    ViewData["Title"] = "Eliminación de Escuela";
+}
+
+<h1>Eliminación de Escuela</h1>
+
+<h3>Esta seguro que desea eliminar esta escuela?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AñoDeCreación)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AñoDeCreación)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ciudad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dirección)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dirección)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoEscuela)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoEscuela)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+        <a asp-action="Index">Volver a lista de Escuelas</a>
+    </form>
+</div>
