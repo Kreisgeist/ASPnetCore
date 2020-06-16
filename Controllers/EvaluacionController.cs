@@ -22,7 +22,7 @@ namespace ASP_.NET_Core.Controllers
         public async Task<IActionResult> Index()
         {
             var escuelaContext = _context.Evaluaciones.Include(e => e.Alumno).Include(e => e.Asignatura);
-            return View(await escuelaContext.OrderBy(e => e.AlumnoId).ThenBy(e => e.AsignaturaId).ToListAsync());
+            return View(await escuelaContext.OrderBy(e => e.AlumnoId).ThenBy(e => e.AsignaturaId).ThenBy(e => e.Nombre).ToListAsync());
         }
 
         // GET: Evaluacion/Details/5

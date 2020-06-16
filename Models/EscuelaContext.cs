@@ -67,11 +67,11 @@ namespace ASP_.NET_Core.Models
             foreach (var curso in cursos)
             {
                 var tmpList = new List<Asignatura> {
-                    new Asignatura{Id = Guid.NewGuid().ToString(), CursoId = curso.Id, Nombre = "Matematicas"},
-                    new Asignatura{Id = Guid.NewGuid().ToString(), CursoId = curso.Id, Nombre = "Educación Física"},
-                    new Asignatura{Id = Guid.NewGuid().ToString(), CursoId = curso.Id, Nombre = "Castellano"},
-                    new Asignatura{Id = Guid.NewGuid().ToString(), CursoId = curso.Id, Nombre = "Ciencias Naturales"},
-                    new Asignatura{Id = Guid.NewGuid().ToString(), CursoId = curso.Id, Nombre = "Programación"},
+                    new Asignatura{Id = Guid.NewGuid().ToString(), CursoId = curso.Id, Nombre = $"Matematicas {curso.Nombre}"},
+                    new Asignatura{Id = Guid.NewGuid().ToString(), CursoId = curso.Id, Nombre = $"Educación Física {curso.Nombre}"},
+                    new Asignatura{Id = Guid.NewGuid().ToString(), CursoId = curso.Id, Nombre = $"Castellano {curso.Nombre}"},
+                    new Asignatura{Id = Guid.NewGuid().ToString(), CursoId = curso.Id, Nombre = $"Ciencias Naturales {curso.Nombre}"},
+                    new Asignatura{Id = Guid.NewGuid().ToString(), CursoId = curso.Id, Nombre = $"Programación {curso.Nombre}"},
                 };
                 listaCompleta.AddRange(tmpList);
                 //curso.Asignaturas = tmpList;
